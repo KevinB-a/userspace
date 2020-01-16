@@ -3,13 +3,12 @@ from model.usermodel import UserModel
 class UserView():
     """ """
     def __init__(self):
-        self.usermodel = UserModel
+        self.usermodel = UserModel()
     
-    def  to_log_in(self):
+    def to_log_in(self):
         pseudo = input("veuillez saisir votre pseudo")
         self.usermodel.log_in(pseudo)
     
-        
     def new_account(self):
         """ """
         lastname = input("veuillez saisir votre nom de famille")

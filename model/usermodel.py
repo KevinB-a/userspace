@@ -1,4 +1,4 @@
-from connection import Connection
+from model.connection import Connection
 
 class UserModel():
     """ """
@@ -16,9 +16,7 @@ class UserModel():
     def create_an_account(self,lastname, firstname, pseudo, email, age, password):
         """ """
         self.db.initialize_connection()
-        self.db.cursor.execute(
-        "INSERT INTO users(lastname, firstname, pseudo, email, age, password) VALUES (%s,%s,%s,%s,%s,%s);",
-        (lastname, firstname, pseudo, email, age, password))
+        self.db.cursor.execute("INSERT INTO users(lastname, firstname, pseudo, email, age, password) VALUES (%s, %s, %s, %s, %s, %s);",(lastname, firstname, pseudo, email, age, password))
         self.db.connection.commit() 
         self.db.close_connection() 
         
