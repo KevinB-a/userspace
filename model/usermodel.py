@@ -29,21 +29,10 @@ class UserModel():
         self.db.connection.commit()
         self.db.close_connection()
     
-    def update_an_account(self,choice,value, pseudo):
+    def update_an_account(self,column,value, pseudo):
         """ """
         self.db.initialize_connection()
-        if choice =="l":
-            self.db.cursor.execute("UPDATE users set lastname= %s WHERE pseudo = %s;",(value, pseudo,))
-        if choice =="f":
-            self.db.cursor.execute("UPDATE users set firstname= %s WHERE pseudo = %s;",(value, pseudo,))
-        if choice =="p":
-            self.db.cursor.execute("UPDATE users set pseudo= %s WHERE pseudo = %s;",(value, pseudo,))
-        if choice =="e":
-            self.db.cursor.execute("UPDATE users set email= %s WHERE pseudo = %s;",(value, pseudo,))
-        if choice =="a":
-            self.db.cursor.execute("UPDATE users set age= %s WHERE pseudo = %s;",(value, pseudo,))
-        if choice =="d":
-            self.db.cursor.execute("UPDATE users set password= %s WHERE pseudo = %s;",(value, pseudo,))
+        self.db.cursor.execute("UPDATE users set "+column+" = %s WHERE pseudo = %s;",(value, pseudo,))
         self.db.connection.commit()
         self.db.close_connection()  
     
