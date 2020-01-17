@@ -11,12 +11,12 @@ class UserView():
     
     def new_account(self):
         """ """
-        lastname = input("veuillez saisir votre nom de famille")
-        firstname = input("veuillez saisir votre prenom")
-        pseudo = input("veuillez saisir votre pseudo")
-        email = input("veuillez saisir votre email")
-        age = int(input("veullez saisir votre age"))
-        password = input("veuillez saisir votre mot de passe")
+        lastname = input("veuillez saisir votre nom de famille :")
+        firstname = input("veuillez saisir votre prenom :")
+        pseudo = input("veuillez saisir votre pseudo :")
+        email = input("veuillez saisir votre email :")
+        age = int(input("veullez saisir votre age :"))
+        password = input("veuillez saisir votre mot de passe :")
         self.usermodel.create_an_account(lastname, firstname, pseudo, email, age, password)
         
     def to_delete_an_account(self):
@@ -25,8 +25,8 @@ class UserView():
         self.usermodel.delete_an_account(pseudo)
     
     def to_update_an_account(self):
-        """ """
-        column = input("veuillez saisir le champ de la table")
+        """ """        
+        choice = input("choisir la colonne a modifier l pour lastname f pour firstname p pour pseudo e pour email a pour age et d pour password")
         value = input("veuillez saisir la nouvelle valeur")
         pseudo = input("veuillez saisir votre pseudo")
-        self.usermodel.update_an_account(column, value, pseudo)
+        self.usermodel.update_an_account(choice,value, pseudo)

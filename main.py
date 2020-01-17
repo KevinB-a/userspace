@@ -9,6 +9,11 @@ if __name__ == "__main__":
     
     if choice == "c":
         userview.to_log_in()
-    
-
-    
+        print("vous etes connecté")
+        conchoice = input("que voulez vous faire tapez m pour modifier s pour supprimer q pour se deconnecter ")
+        if conchoice =="m":
+            userview.to_update_an_account() 
+        if conchoice =="s":
+            userview.to_delete_an_account() 
+        if conchoice =="q":
+            exit()
