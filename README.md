@@ -44,4 +44,5 @@ exemple
 spéciaux
 - S’assurer que l’âge est bien un nombre
 - S’assurer que l’adresse mail est une adresse mail valide
-- Saler le mot de passe
+- Saler le mot de 
+---------------------------------------------------------------------------------------------------------------
